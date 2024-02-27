@@ -33,6 +33,31 @@ The project requires the following dependencies:
 - Python
 - Pandas
 
+## Requirements
+
+### Category DataFrame
+- A Category DataFrame is created with a "category_id" column and a "category" column.
+- The category DataFrame is exported as category.csv.
+
+### Subcategory DataFrame
+- A Subcategory DataFrame is created with a "subcategory_id" column and a "subcategory" column.
+- The subcategory DataFrame is exported as subcategory.csv.
+
+### Campaign DataFrame
+- A Campaign DataFrame is created with specific columns, including "cf_id", "contact_id", "company_name", "description", etc.
+- The campaign DataFrame is exported as campaign.csv.
+
+### Contacts DataFrame
+- A Contacts DataFrame is created with columns such as "contact_id", "first_name", "last_name", and "email".
+- The contacts DataFrame is exported as contacts.csv.
+
+### Crowdfunding Database
+- A database schema labeled `crowdfunding_db_schema.sql` is created.
+- A database named `crowdfunding_db` is created using the schema file.
+- The database has the appropriate primary and foreign keys and relationships.
+- Each CSV file is imported into the appropriate table without errors.
+- The data from each table is displayed using a SELECT * statement.
+  
 ## Instructions
 
 To run the ETL pipeline and generate the CSV files, follow these steps:
