@@ -14,6 +14,13 @@ CREATE TABLE category (
 
 SELECT * FROM category;
 
+CREATE TABLE sub_category (
+	subcategory_id VARCHAR(10) PRIMARY KEY,
+	subcategory VARCHAR(20)	
+);
+
+SELECT * FROM sub_category;
+
 CREATE TABLE campaign (
 	cf_id INTEGER,
 	contact_id INTEGER NOT NULL,
@@ -30,20 +37,11 @@ CREATE TABLE campaign (
 	end_date DATE,
 	category_id VARCHAR(5),
 	FOREIGN KEY (category_id) REFERENCES category(category_id),
-	subcategory_id VARCHAR(20) PRIMARY KEY
+	subcategory_id VARCHAR(20),
+	FOREIGN KEY (subcategory_id) REFERENCES sub_category(subcategory_id)
 );
 
 SELECT * FROM campaign;
-
-
-CREATE TABLE sub_category (
-	subcategory_id VARCHAR(10) PRIMARY KEY,
-	sub_category VARCHAR(20),
-	FOREIGN KEY (subcategory_id) REFERENCES campaign(subcategory_id)
-);
-
-SELECT * FROM sub_category;
-
 
 DROP TABLE IF EXISTS campaign;
 DROP TABLE IF EXISTS category;
